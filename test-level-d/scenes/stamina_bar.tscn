@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://c4wrg1htxtc5k"]
+
+[ext_resource type="Script" uid="uid://deq6ponnw23x3" path="res://scenes/stamina_bar.gd" id="1_lcti6"]
+
+[node name="STAMINA_BAR" type="ProgressBar" unique_id=1711395366]
+offset_left = -376.0
+offset_top = -159.0
+offset_right = -369.0
+offset_bottom = 96.0
+value = 100.0
+fill_mode = 3
+show_percentage = false
+script = ExtResource("1_lcti6")

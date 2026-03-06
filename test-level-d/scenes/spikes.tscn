@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://u33e4yi4cxhv"]
+
+[ext_resource type="Texture2D" uid="uid://dr4n1fscmngqf" path="res://assets/BASE_TILESET_PROTOTYPE.png" id="1_xbcdo"]
+[ext_resource type="PackedScene" uid="uid://d1loa63s7wfpd" path="res://scenes/killzone.tscn" id="2_bflj7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kd5gq"]
+size = Vector2(48, 6)
+
+[node name="SPIKES" type="Node2D" unique_id=1922562780]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=883012828]
+texture = ExtResource("1_xbcdo")
+region_enabled = true
+region_rect = Rect2(64, 23, 48, 9)
+
+[node name="KILLZONE" parent="." unique_id=1037070978 instance=ExtResource("2_bflj7")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KILLZONE" unique_id=57450070]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_kd5gq")
