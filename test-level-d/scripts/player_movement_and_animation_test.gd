@@ -8,6 +8,7 @@ var is_floating := false
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var stamina_bar = $"../UI/CanvasLayer/ProgressBar"
 
+
 # ANIM
 enum State {
 	IDLE,
