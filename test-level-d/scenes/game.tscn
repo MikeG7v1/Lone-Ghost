@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://vfxwkkhnlq82"]
 
 [ext_resource type="PackedScene" uid="uid://uw6c4dj5f184" path="res://scenes/player.tscn" id="1_uwrxv"]
+[ext_resource type="Script" uid="uid://cxco6pwvhgm3a" path="res://scripts/player/player.gd" id="2_kvpfn"]
 [ext_resource type="Texture2D" uid="uid://dr4n1fscmngqf" path="res://assets/BASE_TILESET_PROTOTYPE.png" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://bgexhiy3ean1b" path="res://scenes/platform.tscn" id="3_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://d1loa63s7wfpd" path="res://scenes/killzone.tscn" id="4_lbhrr"]
@@ -113,6 +114,7 @@ _data = {
 [node name="CharacterBody2D" parent="." unique_id=1412817601 instance=ExtResource("1_uwrxv")]
 position = Vector2(-292, -7)
 collision_layer = 2
+script = ExtResource("2_kvpfn")
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=591474126]
 zoom = Vector2(2.25, 2.25)
@@ -178,8 +180,9 @@ theme_override_fonts/font = ExtResource("6_p57ef")
 theme_override_font_sizes/font_size = 16
 text = "Press 'space' to jump"
 
-[node name="ProgressBar" parent="." unique_id=1711395366 instance=ExtResource("7_u5sy4")]
+[node name="ProgressBar" parent="." unique_id=1711395366 node_paths=PackedStringArray("stats") instance=ExtResource("7_u5sy4")]
 layout_direction = 2
+stats = NodePath("../CharacterBody2D/Stats")
 
 [node name="Timer2" type="Timer" parent="ProgressBar" unique_id=1404882650]
 wait_time = 0.6

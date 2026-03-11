@@ -147,17 +147,6 @@ _data = {
 
 [node name="GAME" type="Node2D" unique_id=1276797305]
 
-[node name="CharacterBody2D" parent="." unique_id=1412817601 instance=ExtResource("1_u1epy")]
-position = Vector2(-292, -7)
-collision_layer = 2
-
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=591474126]
-zoom = Vector2(2, 2)
-limit_left = -400
-limit_right = 500
-limit_bottom = 120
-position_smoothing_enabled = true
-
 [node name="TileMap" type="TileMap" parent="." unique_id=1341381968]
 tile_set = SubResource("TileSet_lbhrr")
 format = 2
@@ -230,7 +219,7 @@ text = "Press 'E' to float"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="UI" unique_id=133791702]
 
-[node name="ProgressBar" parent="UI/CanvasLayer" unique_id=1711395366 instance=ExtResource("5_saon2")]
+[node name="ProgressBar" parent="UI/CanvasLayer" unique_id=1711395366 node_paths=PackedStringArray("stats") instance=ExtResource("5_saon2")]
 layout_direction = 2
 anchors_preset = 2
 anchor_top = 1.0
@@ -240,9 +229,25 @@ offset_top = -439.0
 offset_right = 30.0
 offset_bottom = -39.0
 grow_vertical = 0
+stats = NodePath("../../../PLAYER/Stats")
 
 [node name="Timer2" type="Timer" parent="UI/CanvasLayer/ProgressBar" unique_id=1404882650]
 wait_time = 0.6
 one_shot = true
 
+[node name="PLAYER" parent="." unique_id=1524519833 instance=ExtResource("1_u1epy")]
+position = Vector2(-365, 1)
+
+[node name="CollisionShape2D" parent="PLAYER" index="1" unique_id=2035733620]
+position = Vector2(1.5, -32)
+
+[node name="Camera2D" type="Camera2D" parent="PLAYER" unique_id=2097052527]
+position = Vector2(-292, -7)
+zoom = Vector2(2.25, 2.25)
+limit_left = -400
+limit_bottom = 120
+position_smoothing_enabled = true
+
 [connection signal="timeout" from="UI/CanvasLayer/ProgressBar/Timer2" to="UI/CanvasLayer/ProgressBar" method="_on_timer_2_timeout"]
+
+[editable path="PLAYER"]

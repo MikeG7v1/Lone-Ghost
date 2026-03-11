@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c4wrg1htxtc5k"]
 
-[ext_resource type="Script" uid="uid://deq6ponnw23x3" path="res://scenes/stamina_bar.gd" id="1_lcti6"]
+[ext_resource type="Script" uid="uid://deq6ponnw23x3" path="res://scripts/ui/stamina_bar.gd" id="1_lcti6"]
 
 [node name="STAMINA_BAR" type="ProgressBar" unique_id=1711395366]
 offset_left = -376.0
