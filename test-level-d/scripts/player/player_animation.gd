@@ -50,12 +50,20 @@ func update_animation(direction, floating, on_floor):
 				change_state(State.FLOATING)
 			elif moving:
 				change_state(State.START_WALKING)
+		
+		State.START_WALKING:
+			if animated_sprite.animation_finished:
+				change_state(State.WALK)
 
 		State.WALK:
 			if floating:
 				change_state(State.FLOATING)
 			elif not moving:
 				change_state(State.STOP_WALKING)
+				
+		State.STOP_WALKING:
+			if animated_sprite.animation_finished:
+				change_state(State.IDLE)
 
 		State.FLOATING:
 			if not floating:
