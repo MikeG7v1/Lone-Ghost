@@ -1,9 +1,12 @@
 [gd_scene format=3 uid="uid://uw6c4dj5f184"]
 
 [ext_resource type="Texture2D" uid="uid://bt8o5gukocny2" path="res://assets/GHOST_IDLE_ANIMATION.png" id="1_3vyb7"]
-[ext_resource type="Script" uid="uid://107p3hotxvry" path="res://scripts/player_movement_and_animation_test.gd" id="1_dqkch"]
+[ext_resource type="Script" uid="uid://cxco6pwvhgm3a" path="res://scripts/player/player.gd" id="1_fjrip"]
 [ext_resource type="Texture2D" uid="uid://bmjykm2nqd8v4" path="res://assets/GHOST_FLOATING_ANIM_PREVIEW.png" id="2_qhqgy"]
 [ext_resource type="Texture2D" uid="uid://6l5t86oq7sbi" path="res://assets/GHOST_WALK_CYCLE_PREVIEW.png" id="4_dqkch"]
+[ext_resource type="Script" uid="uid://bgwgn34a8a5ax" path="res://scripts/player/player_movement.gd" id="5_fjrip"]
+[ext_resource type="Script" uid="uid://ckpgscoiaunov" path="res://scripts/player/player_animation.gd" id="6_smehm"]
+[ext_resource type="Script" uid="uid://dkoyetqdc6kfn" path="res://scripts/player/player_stats.gd" id="7_ur7pv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3v2ag"]
 atlas = ExtResource("2_qhqgy")
@@ -315,11 +318,11 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jej6c"]
-size = Vector2(27, 63.75)
+size = Vector2(27, 64)
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1412817601]
+[node name="PLAYER" type="CharacterBody2D" unique_id=1412817601]
 z_index = 5
-script = ExtResource("1_dqkch")
+script = ExtResource("1_fjrip")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=859038152]
 position = Vector2(-2, -34)
@@ -332,5 +335,14 @@ position = Vector2(1.5, -32.125)
 shape = SubResource("RectangleShape2D_jej6c")
 
 [node name="AnimationTree" type="AnimationTree" parent="." unique_id=1433755818]
+
+[node name="Movement" type="Node" parent="." unique_id=1566224360]
+script = ExtResource("5_fjrip")
+
+[node name="Animation" type="Node" parent="." unique_id=1261793448]
+script = ExtResource("6_smehm")
+
+[node name="Stats" type="Node" parent="." unique_id=1533925107]
+script = ExtResource("7_ur7pv")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

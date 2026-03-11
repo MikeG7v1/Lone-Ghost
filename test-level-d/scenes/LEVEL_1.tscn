@@ -1,15 +1,11 @@
 [gd_scene format=3 uid="uid://bfmj44fgnd3xl"]
 
 [ext_resource type="PackedScene" uid="uid://uw6c4dj5f184" path="res://scenes/player.tscn" id="1_u1epy"]
-[ext_resource type="Script" uid="uid://cxco6pwvhgm3a" path="res://scripts/player/player.gd" id="2_htmek"]
 [ext_resource type="Texture2D" uid="uid://dr4n1fscmngqf" path="res://assets/BASE_TILESET_PROTOTYPE.png" id="2_stcqu"]
 [ext_resource type="PackedScene" uid="uid://d1loa63s7wfpd" path="res://scenes/killzone.tscn" id="3_c1dqy"]
-[ext_resource type="Script" uid="uid://bgwgn34a8a5ax" path="res://scripts/player/player_movement.gd" id="3_dhh1w"]
 [ext_resource type="PackedScene" uid="uid://bgexhiy3ean1b" path="res://scenes/platform.tscn" id="3_stcqu"]
 [ext_resource type="FontFile" uid="uid://dd04oddx2ajab" path="res://fonts/fs-pixel-sans-unicode-regular/fs-pixel-sans-unicode-regular.ttf" id="4_gnpqm"]
-[ext_resource type="Script" uid="uid://ckpgscoiaunov" path="res://scripts/player/player_animation.gd" id="4_u87iv"]
 [ext_resource type="PackedScene" uid="uid://c4wrg1htxtc5k" path="res://scenes/stamina_bar.tscn" id="5_saon2"]
-[ext_resource type="Script" uid="uid://dkoyetqdc6kfn" path="res://scripts/player/player_stats.gd" id="5_we7t3"]
 [ext_resource type="PackedScene" uid="uid://u33e4yi4cxhv" path="res://scenes/spikes.tscn" id="7_c1dqy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
@@ -151,26 +147,6 @@ _data = {
 
 [node name="GAME" type="Node2D" unique_id=1276797305]
 
-[node name="CharacterBody2D" parent="." unique_id=1412817601 instance=ExtResource("1_u1epy")]
-position = Vector2(-292, -7)
-collision_layer = 2
-script = ExtResource("2_htmek")
-
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=2097052527]
-zoom = Vector2(2.25, 2.25)
-limit_left = -400
-limit_bottom = 120
-position_smoothing_enabled = true
-
-[node name="Movement" type="Node" parent="CharacterBody2D" unique_id=432529939]
-script = ExtResource("3_dhh1w")
-
-[node name="Animation" type="Node" parent="CharacterBody2D" unique_id=1355487974]
-script = ExtResource("4_u87iv")
-
-[node name="Stats" type="Node" parent="CharacterBody2D" unique_id=1273396717]
-script = ExtResource("5_we7t3")
-
 [node name="TileMap" type="TileMap" parent="." unique_id=1341381968]
 tile_set = SubResource("TileSet_lbhrr")
 format = 2
@@ -253,10 +229,25 @@ offset_top = -439.0
 offset_right = 30.0
 offset_bottom = -39.0
 grow_vertical = 0
-stats = NodePath("../../../CharacterBody2D/Stats")
+stats = NodePath("../../../PLAYER/Stats")
 
 [node name="Timer2" type="Timer" parent="UI/CanvasLayer/ProgressBar" unique_id=1404882650]
 wait_time = 0.6
 one_shot = true
 
+[node name="PLAYER" parent="." unique_id=1524519833 instance=ExtResource("1_u1epy")]
+position = Vector2(-365, 1)
+
+[node name="CollisionShape2D" parent="PLAYER" index="1" unique_id=2035733620]
+position = Vector2(1.5, -32)
+
+[node name="Camera2D" type="Camera2D" parent="PLAYER" unique_id=2097052527]
+position = Vector2(-292, -7)
+zoom = Vector2(2.25, 2.25)
+limit_left = -400
+limit_bottom = 120
+position_smoothing_enabled = true
+
 [connection signal="timeout" from="UI/CanvasLayer/ProgressBar/Timer2" to="UI/CanvasLayer/ProgressBar" method="_on_timer_2_timeout"]
+
+[editable path="PLAYER"]

@@ -3,12 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://uw6c4dj5f184" path="res://scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="Script" uid="uid://cxco6pwvhgm3a" path="res://scripts/player/player.gd" id="2_kvpfn"]
 [ext_resource type="Texture2D" uid="uid://dr4n1fscmngqf" path="res://assets/BASE_TILESET_PROTOTYPE.png" id="2_yqjtg"]
-[ext_resource type="Script" uid="uid://bgwgn34a8a5ax" path="res://scripts/player/player_movement.gd" id="3_dinhu"]
 [ext_resource type="PackedScene" uid="uid://bgexhiy3ean1b" path="res://scenes/platform.tscn" id="3_lnu2h"]
-[ext_resource type="Script" uid="uid://ckpgscoiaunov" path="res://scripts/player/player_animation.gd" id="4_kvuet"]
 [ext_resource type="PackedScene" uid="uid://d1loa63s7wfpd" path="res://scenes/killzone.tscn" id="4_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://u33e4yi4cxhv" path="res://scenes/spikes.tscn" id="5_iywne"]
-[ext_resource type="Script" uid="uid://dkoyetqdc6kfn" path="res://scripts/player/player_stats.gd" id="5_trtic"]
 [ext_resource type="FontFile" uid="uid://dd04oddx2ajab" path="res://fonts/fs-pixel-sans-unicode-regular/fs-pixel-sans-unicode-regular.ttf" id="6_p57ef"]
 [ext_resource type="PackedScene" uid="uid://c4wrg1htxtc5k" path="res://scenes/stamina_bar.tscn" id="7_u5sy4"]
 
@@ -124,15 +121,6 @@ zoom = Vector2(2.25, 2.25)
 limit_left = -400
 limit_bottom = 120
 position_smoothing_enabled = true
-
-[node name="Movement" type="Node" parent="CharacterBody2D" unique_id=1734082351]
-script = ExtResource("3_dinhu")
-
-[node name="Animation" type="Node" parent="CharacterBody2D" unique_id=707438909]
-script = ExtResource("4_kvuet")
-
-[node name="Stats" type="Node" parent="CharacterBody2D" unique_id=1363218909]
-script = ExtResource("5_trtic")
 
 [node name="TileMap" type="TileMap" parent="." unique_id=1341381968]
 tile_set = SubResource("TileSet_lbhrr")
