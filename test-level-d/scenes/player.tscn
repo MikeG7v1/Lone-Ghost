@@ -320,7 +320,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jej6c"]
 size = Vector2(27, 64)
 
-[node name="PLAYER" type="CharacterBody2D" unique_id=1412817601]
+[node name="PLAYER" type="CharacterBody2D" unique_id=1412817601 groups=["player"]]
 z_index = 5
 script = ExtResource("1_fjrip")
 
