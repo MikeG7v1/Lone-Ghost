@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://djopnj5iswsyo"]
+
+[ext_resource type="Texture2D" uid="uid://dyo33e8te1oft" path="res://assets/WORLD/LADDER_S.png" id="1_n88es"]
+[ext_resource type="Script" uid="uid://by8spphhaa7ib" path="res://scripts/world/ladder.gd" id="1_oqgwa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ew6mv"]
+size = Vector2(12, 68)
+
+[node name="LADDER_S" type="Node2D" unique_id=2125484154]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1923662549]
+texture = ExtResource("1_n88es")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1102705862]
+script = ExtResource("1_oqgwa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=897379583]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_ew6mv")
+debug_color = Color(0.29803923, 0.08627451, 0.015686275, 0.8901961)
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

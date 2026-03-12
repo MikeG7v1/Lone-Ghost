@@ -1,20 +1,21 @@
-[gd_scene format=3 uid="uid://djopnj5iswsyo"]
+[gd_scene format=3 uid="uid://b7jt5gals6y0l"]
 
-[ext_resource type="Texture2D" uid="uid://dyo33e8te1oft" path="res://assets/WORLD/LADDER_TEMP.png" id="1_n88es"]
-[ext_resource type="Script" uid="uid://by8spphhaa7ib" path="res://scripts/world/ladder.gd" id="1_oqgwa"]
+[ext_resource type="Texture2D" uid="uid://b1lc24ct6i2td" path="res://assets/WORLD/LADDER_M.png" id="1_6shik"]
+[ext_resource type="Script" uid="uid://by8spphhaa7ib" path="res://scripts/world/ladder.gd" id="2_o7wgy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ew6mv"]
-size = Vector2(12, 64)
+size = Vector2(12, 132)
 
-[node name="LADDER" type="Node2D" unique_id=2125484154]
+[node name="LADDER_M" type="Node2D" unique_id=2125484154]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1923662549]
-texture = ExtResource("1_n88es")
+texture = ExtResource("1_6shik")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1102705862]
-script = ExtResource("1_oqgwa")
+script = ExtResource("2_o7wgy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=897379583]
+position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_ew6mv")
 debug_color = Color(0.29803923, 0.08627451, 0.015686275, 0.8901961)
 

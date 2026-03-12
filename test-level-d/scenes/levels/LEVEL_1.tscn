@@ -7,7 +7,7 @@
 [ext_resource type="FontFile" uid="uid://dd04oddx2ajab" path="res://fonts/fs-pixel-sans-unicode-regular/fs-pixel-sans-unicode-regular.ttf" id="5_6vrsv"]
 [ext_resource type="PackedScene" uid="uid://c4wrg1htxtc5k" path="res://scenes/ui/stamina_bar.tscn" id="6_t62ml"]
 [ext_resource type="PackedScene" uid="uid://uw6c4dj5f184" path="res://scenes/player.tscn" id="7_bng1x"]
-[ext_resource type="PackedScene" uid="uid://djopnj5iswsyo" path="res://scenes/areas/ladder.tscn" id="8_n8rrd"]
+[ext_resource type="PackedScene" uid="uid://djopnj5iswsyo" path="res://scenes/world/ladders/ladder_s.tscn" id="8_n8rrd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
 texture = ExtResource("1_pdm1g")
@@ -255,8 +255,8 @@ position_smoothing_enabled = true
 
 [node name="LADDERS" type="Node" parent="." unique_id=116833427]
 
-[node name="LADDER" parent="LADDERS" unique_id=2125484154 instance=ExtResource("8_n8rrd")]
-position = Vector2(-252, -32)
+[node name="LADDER_S" parent="LADDERS" unique_id=2125484154 instance=ExtResource("8_n8rrd")]
+position = Vector2(-277, -32)
 
 [connection signal="timeout" from="UI/CanvasLayer/ProgressBar/Timer2" to="UI/CanvasLayer/ProgressBar" method="_on_timer_2_timeout"]
 
