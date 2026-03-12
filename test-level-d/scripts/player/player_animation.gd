@@ -40,7 +40,12 @@ func change_state(new_state):
 			
 
 func update_animation(direction, floating, on_floor):
-
+	
+	if direction > 0:
+		animated_sprite.flip_h = false
+	elif direction < 0:
+		animated_sprite.flip_h = true
+		
 	var moving = direction != 0 and not floating
 
 	match current_state:
