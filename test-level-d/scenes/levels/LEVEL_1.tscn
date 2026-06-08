@@ -7,6 +7,7 @@
 [ext_resource type="FontFile" uid="uid://dd04oddx2ajab" path="res://fonts/fs-pixel-sans-unicode-regular/fs-pixel-sans-unicode-regular.ttf" id="5_6vrsv"]
 [ext_resource type="PackedScene" uid="uid://c4wrg1htxtc5k" path="res://scenes/ui/stamina_bar.tscn" id="6_t62ml"]
 [ext_resource type="PackedScene" uid="uid://uw6c4dj5f184" path="res://scenes/player.tscn" id="7_bng1x"]
+[ext_resource type="Script" uid="uid://cqkguq6wsqo5b" path="res://scripts/camera/camera.gd" id="8_7vxkm"]
 [ext_resource type="PackedScene" uid="uid://b0dl7nt0ob1na" path="res://scenes/rooms/room_2.tscn" id="8_n8rrd"]
 [ext_resource type="PackedScene" uid="uid://b7jt5gals6y0l" path="res://scenes/world/ladders/ladder_m.tscn" id="9_tlk7x"]
 
@@ -253,6 +254,7 @@ limit_left = -400
 limit_right = 1207
 limit_bottom = 120
 position_smoothing_enabled = true
+script = ExtResource("8_7vxkm")
 
 [node name="LADDERS" type="Node" parent="." unique_id=116833427]
 
