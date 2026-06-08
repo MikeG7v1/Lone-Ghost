@@ -26,7 +26,7 @@ func _ready():
 	player = get_parent() as CharacterBody2D
 
 func handle_input():
-	direction = Input.get_axis("move_left","move_right")
+	direction = sign(Input.get_axis("move_left","move_right"))
 
 	# FLOATING INPUT LOGIC
 	if Input.is_action_just_pressed("floating") and stats.stamina >= 10:
@@ -43,7 +43,7 @@ func handle_input():
 		player.velocity.y = JUMP_VELOCITY
 
 	#CLIMBING INPUT LOGIC
-	if can_climb and Input.is_action_pressed("move_up"):
+	if can_climb and Input.is_action_pressed("move_up") or Input.is_action_pressed("move_down"):
 		is_climbing = true
 	if !can_climb:
 		is_climbing = false
@@ -59,6 +59,8 @@ func apply_physics(delta):
 			player.velocity.y = -climb_speed
 		elif Input.is_action_pressed("move_down"):
 			player.velocity.y = climb_speed
+		
+			
 		player.move_and_slide()
 		return
 
