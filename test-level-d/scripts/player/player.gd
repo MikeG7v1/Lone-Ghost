@@ -18,5 +18,4 @@ func _physics_process(delta):
 	animation.update_animation(
 		movement.direction,
 		movement.is_floating,
-		is_on_floor()
 	)

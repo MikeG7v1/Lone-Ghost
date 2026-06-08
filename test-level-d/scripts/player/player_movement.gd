@@ -38,12 +38,12 @@ func handle_input():
 	if Input.is_action_just_released("floating"):
 		is_floating = false
 
-	#JUMPING INPUT LOGIC
-	if Input.is_action_just_pressed("jump") and player.is_on_floor():
+	#JUMPING FROM THE FLOOR INPUT LOGIC
+	if Input.is_action_just_pressed("jump") and player.is_on_floor(): 
 		player.velocity.y = JUMP_VELOCITY
 
 	#CLIMBING INPUT LOGIC
-	if can_climb and Input.is_action_pressed("move_up") or Input.is_action_pressed("move_down"):
+	if can_climb and (Input.is_action_pressed("move_up") or Input.is_action_pressed("move_down")):
 		is_climbing = true
 	if !can_climb:
 		is_climbing = false
@@ -55,10 +55,20 @@ func apply_physics(delta):
 		player.velocity.x = 0
 		player.velocity.y = 0
 		
+		if Input.is_action_just_pressed('jump'):
+			is_climbing = false
+			player.velocity.y = JUMP_VELOCITY
+			return 
+
 		if Input.is_action_pressed("move_up"):
 			player.velocity.y = -climb_speed
 		elif Input.is_action_pressed("move_down"):
 			player.velocity.y = climb_speed
+			
+		if Input.is_action_pressed("move_left"):
+			player.velocity.x = -climb_speed
+		elif Input.is_action_pressed("move_right"):
+			player.velocity.x = climb_speed
 		
 			
 		player.move_and_slide()

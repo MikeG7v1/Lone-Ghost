@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c4wrg1htxtc5k" path="res://scenes/ui/stamina_bar.tscn" id="6_t62ml"]
 [ext_resource type="PackedScene" uid="uid://uw6c4dj5f184" path="res://scenes/player.tscn" id="7_bng1x"]
 [ext_resource type="PackedScene" uid="uid://b0dl7nt0ob1na" path="res://scenes/rooms/room_2.tscn" id="8_n8rrd"]
+[ext_resource type="PackedScene" uid="uid://b7jt5gals6y0l" path="res://scenes/world/ladders/ladder_m.tscn" id="9_tlk7x"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pdm1g"]
 texture = ExtResource("1_pdm1g")
@@ -257,6 +258,9 @@ position_smoothing_enabled = true
 
 [node name="ROOM 2" parent="." unique_id=1840765177 instance=ExtResource("8_n8rrd")]
 position = Vector2(624, 0)
+
+[node name="LADDER_M" parent="." unique_id=2125484154 instance=ExtResource("9_tlk7x")]
+position = Vector2(-290, -64)
 
 [connection signal="timeout" from="UI/CanvasLayer/ProgressBar/Timer2" to="UI/CanvasLayer/ProgressBar" method="_on_timer_2_timeout"]
 

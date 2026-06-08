@@ -39,7 +39,7 @@ func change_state(new_state):
 			animated_sprite.play("floating")
 			
 
-func update_animation(direction, floating, on_floor):
+func update_animation(direction, floating):
 	
 	if direction > 0:
 		animated_sprite.flip_h = false
