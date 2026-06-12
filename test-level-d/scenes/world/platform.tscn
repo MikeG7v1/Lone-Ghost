@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bgexhiy3ean1b"]
 
-[ext_resource type="Texture2D" uid="uid://cyx36il12j680" path="res://assets/VERY_BASIC_PLATFORM.png" id="1_ba0x2"]
+[ext_resource type="Texture2D" uid="uid://i58oeqh6ogsy" path="res://assets/WASTELAND/WASTELAND_PLATFORM.png" id="1_4217e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nlgqw"]
 size = Vector2(46, 4)
@@ -8,9 +8,9 @@ size = Vector2(46, 4)
 [node name="PLATFORM" type="AnimatableBody2D" unique_id=1773776870]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1720969362]
-texture = ExtResource("1_ba0x2")
+texture = ExtResource("1_4217e")
 region_enabled = true
-region_rect = Rect2(0, 6, 48, 4)
+region_rect = Rect2(0, 0, 48, 4)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2007737671]
 shape = SubResource("RectangleShape2D_nlgqw")
