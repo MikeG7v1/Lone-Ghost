@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://b1bxylfk28861"]
+
+[ext_resource type="Script" uid="uid://baioeafucmnfk" path="res://scripts/world/room.gd" id="1_mdm1h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2v21j"]
+resource_local_to_scene = true
+size = Vector2(800.2871, 464.65625)
+
+[node name="Area2D" type="Area2D" unique_id=392550451]
+script = ExtResource("1_mdm1h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1988098075]
+shape = SubResource("RectangleShape2D_2v21j")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

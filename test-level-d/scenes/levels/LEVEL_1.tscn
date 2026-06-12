@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://cqkguq6wsqo5b" path="res://scripts/camera/camera.gd" id="8_7vxkm"]
 [ext_resource type="PackedScene" uid="uid://b0dl7nt0ob1na" path="res://scenes/rooms/room_2.tscn" id="8_n8rrd"]
 [ext_resource type="PackedScene" uid="uid://b7jt5gals6y0l" path="res://scenes/world/ladders/ladder_m.tscn" id="9_tlk7x"]
+[ext_resource type="PackedScene" uid="uid://b1bxylfk28861" path="res://scenes/areas/room_area.tscn" id="11_6vrsv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6vrsv"]
 texture = ExtResource("1_7vxkm")
@@ -270,6 +271,18 @@ _data = {
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_iywne"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6vrsv"]
+resource_local_to_scene = true
+size = Vector2(766, 442)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t62ml"]
+resource_local_to_scene = true
+size = Vector2(810, 418.66406)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bng1x"]
+resource_local_to_scene = true
+size = Vector2(810.14355, 469.32813)
+
 [node name="GAME" type="Node2D" unique_id=1276797305]
 
 [node name="TileMap" type="TileMap" parent="." unique_id=1341381968]
@@ -392,7 +405,31 @@ position = Vector2(183, -323)
 [node name="LADDER_M" parent="." unique_id=2118943579 instance=ExtResource("9_tlk7x")]
 position = Vector2(-290, -64)
 
+[node name="Area2D" parent="." unique_id=1355885242 instance=ExtResource("11_6vrsv")]
+position = Vector2(32, 14)
+
+[node name="CollisionShape2D" parent="Area2D" index="0" unique_id=1988098075]
+position = Vector2(-49, -98)
+shape = SubResource("RectangleShape2D_6vrsv")
+
+[node name="Area2D2" parent="." unique_id=392550451 instance=ExtResource("11_6vrsv")]
+position = Vector2(131, 26)
+
+[node name="CollisionShape2D" parent="Area2D2" index="0" unique_id=1988098075]
+position = Vector2(642, -102.66797)
+shape = SubResource("RectangleShape2D_t62ml")
+
+[node name="Area2D3" parent="." unique_id=1166463037 instance=ExtResource("11_6vrsv")]
+position = Vector2(32, 14)
+
+[node name="CollisionShape2D" parent="Area2D3" index="0" unique_id=1988098075]
+position = Vector2(745, -536)
+shape = SubResource("RectangleShape2D_bng1x")
+
 [connection signal="timeout" from="UI/CanvasLayer/ProgressBar/Timer2" to="UI/CanvasLayer/ProgressBar" method="_on_timer_2_timeout"]
 
 [editable path="PLAYER"]
 [editable path="ROOM 2"]
+[editable path="Area2D"]
+[editable path="Area2D2"]
+[editable path="Area2D3"]
