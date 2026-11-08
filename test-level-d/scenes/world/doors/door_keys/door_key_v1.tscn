@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cksfvxrkodkyc"]
+
+[ext_resource type="Texture2D" uid="uid://birocl5ylqoyy" path="res://icon.svg" id="1_byg8b"]
+
+[node name="DoorKeyV1" type="StaticBody2D" unique_id=894102947]
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=1600727811]
+texture = ExtResource("1_byg8b")
