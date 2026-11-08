@@ -29,6 +29,15 @@ window/size/viewport_width=1724
 window/size/viewport_height=964
 window/stretch/mode="viewport"
 
+[file_customization]
+
+folder_colors={
+"res://assets/": "orange",
+"res://fonts/": "red",
+"res://scenes/": "teal",
+"res://scripts/": "purple"
+}
+
 [global_group]
 
 player=""
