@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://uw6c4dj5f184" path="res://scenes/player.tscn" id="7_bng1x"]
 [ext_resource type="Script" uid="uid://cqkguq6wsqo5b" path="res://scripts/camera/camera.gd" id="8_7vxkm"]
 [ext_resource type="PackedScene" uid="uid://b0dl7nt0ob1na" path="res://scenes/rooms/room_2.tscn" id="8_n8rrd"]
-[ext_resource type="PackedScene" uid="uid://b7jt5gals6y0l" path="res://scenes/world/ladders/ladder_m.tscn" id="9_tlk7x"]
 [ext_resource type="PackedScene" uid="uid://b1bxylfk28861" path="res://scenes/areas/room_area.tscn" id="11_6vrsv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6vrsv"]
@@ -271,15 +270,15 @@ _data = {
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_iywne"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6vrsv"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7vxkm"]
 resource_local_to_scene = true
 size = Vector2(909, 440)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_t62ml"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6vrsv"]
 resource_local_to_scene = true
 size = Vector2(767.5, 442)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bng1x"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t62ml"]
 resource_local_to_scene = true
 size = Vector2(666, 421.66406)
 
@@ -345,9 +344,9 @@ rotation = -3.1415925
 [node name="TEXT" type="Node" parent="." unique_id=7850815]
 
 [node name="Label2" type="Label" parent="TEXT" unique_id=2134508499]
-offset_left = -372.0
+offset_left = -371.0
 offset_top = -99.0
-offset_right = -264.0
+offset_right = -263.0
 offset_bottom = -74.0
 theme_override_fonts/font = ExtResource("5_6vrsv")
 theme_override_font_sizes/font_size = 16
@@ -402,16 +401,13 @@ visible = false
 [node name="LADDER_L" parent="ROOM 2" index="1" unique_id=2125484154]
 position = Vector2(183, -323)
 
-[node name="LADDER_M" parent="." unique_id=2118943579 instance=ExtResource("9_tlk7x")]
-position = Vector2(-290, -64)
-
 [node name="Area2D" parent="." unique_id=1355885242 instance=ExtResource("11_6vrsv")]
 position = Vector2(32, 14)
 
 [node name="CollisionShape2D" parent="Area2D" index="0" unique_id=1988098075]
 visible = false
 position = Vector2(28.5, -104)
-shape = SubResource("RectangleShape2D_6vrsv")
+shape = SubResource("RectangleShape2D_7vxkm")
 
 [node name="Area2D2" parent="." unique_id=392550451 instance=ExtResource("11_6vrsv")]
 position = Vector2(131, 26)
@@ -419,7 +415,7 @@ position = Vector2(131, 26)
 [node name="CollisionShape2D" parent="Area2D2" index="0" unique_id=1988098075]
 visible = false
 position = Vector2(764.75, -117)
-shape = SubResource("RectangleShape2D_t62ml")
+shape = SubResource("RectangleShape2D_6vrsv")
 
 [node name="Area2D3" parent="." unique_id=1166463037 instance=ExtResource("11_6vrsv")]
 position = Vector2(32, 14)
@@ -427,7 +423,7 @@ position = Vector2(32, 14)
 [node name="CollisionShape2D" parent="Area2D3" index="0" unique_id=1988098075]
 visible = false
 position = Vector2(813, -559.83203)
-shape = SubResource("RectangleShape2D_bng1x")
+shape = SubResource("RectangleShape2D_t62ml")
 
 [connection signal="timeout" from="UI/CanvasLayer/ProgressBar/Timer2" to="UI/CanvasLayer/ProgressBar" method="_on_timer_2_timeout"]
 
