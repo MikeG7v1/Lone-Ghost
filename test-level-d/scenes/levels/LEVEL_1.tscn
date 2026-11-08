@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cdekym2b2m0ev" path="res://assets/WASTELAND/WASTELAND_TILESET_V1.png" id="1_7vxkm"]
 [ext_resource type="PackedScene" uid="uid://bgexhiy3ean1b" path="res://scenes/world/platform.tscn" id="2_n8rrd"]
-[ext_resource type="PackedScene" uid="uid://d1alsypklqlw6" path="res://scenes/world/doors/door_v1.tscn" id="3_t62ml"]
+[ext_resource type="PackedScene" uid="uid://d1alsypklqlw6" path="res://scenes/world/doors/door_body.tscn" id="3_t62ml"]
 [ext_resource type="PackedScene" uid="uid://d1loa63s7wfpd" path="res://scenes/areas/killzone.tscn" id="3_tlk7x"]
 [ext_resource type="PackedScene" uid="uid://u33e4yi4cxhv" path="res://scenes/world/spikes.tscn" id="4_7vxkm"]
 [ext_resource type="PackedScene" uid="uid://cksfvxrkodkyc" path="res://scenes/world/doors/door_keys/door_key_v1.tscn" id="4_bng1x"]
@@ -309,12 +309,12 @@ autoplay = &"move_platform_2"
 
 [node name="Doors" type="Node" parent="." unique_id=1392734160]
 
-[node name="DoorV1" parent="Doors" unique_id=794393452 instance=ExtResource("3_t62ml")]
+[node name="door_body" parent="Doors" unique_id=794393452 instance=ExtResource("3_t62ml")]
 position = Vector2(1116, 8)
 
 [node name="Keys" type="Node" parent="." unique_id=725486511]
 
-[node name="DoorKeyV1" parent="Keys" unique_id=894102947 instance=ExtResource("4_bng1x")]
+[node name="door_key" parent="Keys" unique_id=894102947 instance=ExtResource("4_bng1x")]
 position = Vector2(-296, -15)
 scale = Vector2(0.145, 0.145)
 

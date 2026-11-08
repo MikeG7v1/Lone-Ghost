@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://bgwgn34a8a5ax" path="res://scripts/player/player_movement.gd" id="5_fjrip"]
 [ext_resource type="Script" uid="uid://ckpgscoiaunov" path="res://scripts/player/player_animation.gd" id="6_smehm"]
 [ext_resource type="Script" uid="uid://dkoyetqdc6kfn" path="res://scripts/player/player_stats.gd" id="7_ur7pv"]
+[ext_resource type="Script" uid="uid://ber30vcdu760m" path="res://scenes/player_inventory.gd" id="8_smehm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3v2ag"]
 atlas = ExtResource("2_qhqgy")
@@ -344,5 +345,8 @@ script = ExtResource("6_smehm")
 
 [node name="Stats" type="Node" parent="." unique_id=1533925107]
 script = ExtResource("7_ur7pv")
+
+[node name="Inventory" type="Node" parent="." unique_id=386455691]
+script = ExtResource("8_smehm")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

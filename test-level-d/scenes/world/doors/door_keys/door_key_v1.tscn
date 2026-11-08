@@ -1,15 +1,18 @@
 [gd_scene format=3 uid="uid://cksfvxrkodkyc"]
 
+[ext_resource type="Script" uid="uid://cgo7sn3dpp6cu" path="res://scripts/world/door_key.gd" id="1_43eyl"]
 [ext_resource type="Texture2D" uid="uid://birocl5ylqoyy" path="res://icon.svg" id="1_byg8b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_byg8b"]
-size = Vector2(128, 125)
+size = Vector2(128, 128)
 
-[node name="DoorKeyV1" type="StaticBody2D" unique_id=894102947]
+[node name="door_key" type="Area2D" unique_id=1984319188]
+script = ExtResource("1_43eyl")
 
 [node name="Icon" type="Sprite2D" parent="." unique_id=1600727811]
 texture = ExtResource("1_byg8b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=200033999]
-position = Vector2(0, -1.5)
 shape = SubResource("RectangleShape2D_byg8b")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
