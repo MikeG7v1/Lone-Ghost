@@ -1,3 +1,18 @@
 [gd_scene format=3 uid="uid://d1alsypklqlw6"]
 
+[ext_resource type="Texture2D" uid="uid://d2jrx7isxnvlf" path="res://assets/WASTELAND/DOORS_WASTELAND.png" id="1_33xvt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_33xvt"]
+size = Vector2(33, 80)
+
 [node name="DoorV1" type="Node2D" unique_id=794393452]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=253853270]
+texture = ExtResource("1_33xvt")
+
+[node name="Area2D" type="StaticBody2D" parent="." unique_id=849213721]
+disable_mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=450296091]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_33xvt")
